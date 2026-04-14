@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Home - LuxeStay Hospitality{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Welcome to LuxeStay</h1>
+        <p class="lead mb-4">Discover the perfect blend of luxury, comfort, and exquisite dining.</p>
+        <a href="{{ url_for('booking') }}" class="btn btn-primary btn-lg me-3">Book Your Stay</a>
+        <a href="{{ url_for('restaurants') }}" class="btn btn-outline-light btn-lg">Explore Dining</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fa-solid fa-hotel fa-3x text-primary-custom mb-3"></i>
+                <h3>World Class Hotels</h3>
+                <p class="text-muted">Experience luxury accommodations with breathtaking views and premium amenities.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fa-solid fa-utensils fa-3x text-primary-custom mb-3"></i>
+                <h3>Fine Dining</h3>
+                <p class="text-muted">Savor exquisite culinary creations crafted by our internationally acclaimed chefs.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="p-4 bg-white rounded shadow-sm h-100">
+                <i class="fa-solid fa-spa fa-3x text-primary-custom mb-3"></i>
+                <h3>Relaxing Spa</h3>
+                <p class="text-muted">Rejuvenate your mind, body, and soul with our exclusive spa and wellness treatments.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

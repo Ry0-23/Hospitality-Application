@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Our Hotels - LuxeStay Hospitality{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="display-4 fw-bold">Our Prime Destinations</h2>
+        <p class="lead text-muted">Discover the perfect luxury stay for your next getaway.</p>
+    </div>
+
+    <div class="row g-4">
+        {% for hotel in hotels %}
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="{{ hotel.image }}" class="card-img-top" alt="{{ hotel.name }}">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold">{{ hotel.name }}</h5>
+                    <div class="mb-2 rating-stars">
+                        {% set full_stars = hotel.rating | int %}
+                        {% for _ in range(full_stars) %}
+                            <i class="fa-solid fa-star"></i>
+                        {% endfor %}
+                        {% if hotel.rating - full_stars >= 0.5 %}
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        {% endif %}
+                        <span class="text-muted ms-1 text-dark">({{ hotel.rating }})</span>
+                    </div>
+                    <p class="card-text text-muted flex-grow-1">{{ hotel.description }}</p>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="fs-5 fw-bold text-primary-custom">${{ hotel.price_per_night }} <small class="text-muted fs-6 fw-normal">/ night</small></span>
+                        <a href="{{ url_for('booking') }}" class="btn btn-outline-primary">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
