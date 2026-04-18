@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
         IMAGE_NAME = "harshhhh23/hospitality-app"
-        APP_EC2 = "ubuntu@34.229.195.51"
+        APP_EC2 = "ubuntu@3.95.46.80"
     }
 
     stages {
